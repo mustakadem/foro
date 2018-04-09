@@ -3,9 +3,9 @@ from django.test import TestCase
 from django.urls import reverse
 from django.urls import resolve
 
-from boards.forms import NewTopicForm
-from .views import home, board_topics, new_topic
-from .models import Board, Topic, Post
+from ..forms import NewTopicForm
+from ..views import home, board_topics, new_topic
+from ..models import Board, Topic, Post
 
 
 class HomeTest(TestCase):
