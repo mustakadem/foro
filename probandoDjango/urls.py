@@ -19,6 +19,7 @@ from django.contrib.auth import views as auth_views
 from accounts import views as accounts_views
 from boards import views
 
+
 urlpatterns = [
     path('', views.BoardListView.as_view(), name='home'),
     path('signup/', accounts_views.signup, name='signup'),
@@ -43,6 +44,7 @@ urlpatterns = [
          name='password_change'),
     path('settings/password/done/', auth_views.PasswordChangeDoneView.as_view(template_name='password_change_done.html'),
          name='password_change_done'),
+    path('settings/account/', accounts_views.UserUpdateView.as_view(), name='my_account'),
     path('boards/<int:pk>/topics/<int:topic_pk>/posts/<int:post_pk>/edit/', views.PostUpdateView.as_view(), name='edit_post'),
     path('boards/<int:pk>/topics/<int:topic_pk>/',views.topic_posts, name='topic_posts'),
     path('boards/<int:pk>/topics/<int:topic_pk>/reply/', views.reply_topic, name='reply_topic'),
